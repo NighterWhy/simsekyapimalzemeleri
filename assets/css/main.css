@@ -202,6 +202,7 @@ h6 {
   .header .navmenu {
     order: 3;
   }
+  
 }
 
 .scrolled .header {
@@ -326,13 +327,55 @@ h6 {
 
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
-  .mobile-nav-toggle {
-    color: var(--nav-color);
-    font-size: 28px;
-    line-height: 0;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: color 0.3s;
+
+  .category-list {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    padding: 0.5rem 0.25rem;
+    margin-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-chip {
+  display: inline-block; /* ✅ genişliği içeriğe göre */
+  max-width: 150px;      /* ✅ maksimum genişlik */
+  text-overflow: ellipsis; /* ✅ uzun metinleri kes */
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+
+  .category-chip.active {
+    background-color: #ff6600;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+  }
+
+  /* Scroll bar görünür olsun */
+  .category-list::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .category-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+
+  .category-list::-webkit-scrollbar-track {
+    background: #eee;
   }
 
   .navmenu {

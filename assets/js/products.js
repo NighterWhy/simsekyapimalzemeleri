@@ -44,13 +44,15 @@ export async function setupProductsPage() {
     const all = catController._categories;
     const found = all.find(c => c.slug === selectedSlug);
     if (found) await catController.select(found.id);
-    else await catController.select(all[0].id);
+    
   } else {
-    await catController.select(catController._categories[0].id);
+    await showAllCategories();
   }
 
   // Başlığa tıklanınca tüm kategorileri tekrar göster
   document.getElementById("kategoriBaslik").addEventListener("click", showAllCategories);
+  
+
 }
 
 function renderProductsPage() {
@@ -156,15 +158,16 @@ async function showAllCategories() {
   document.querySelectorAll('.category-card').forEach(card => {
     card.addEventListener('click', async () => {
       const catId = parseInt(card.dataset.categoryId);
-
-      // 1️⃣ Her zaman kategori verisini bul
+       if (!catController) return;
+      catController.select(catId);
+      // 1️ Her zaman kategori verisini bul
       const category = catController._categories.find(c => c.id == catId);
       if (!category) return;
 
-      // 2️⃣ UI'de aktif olarak göster
+      // 2️ UI'de aktif olarak göster
       CategoryUI.setActive(document.getElementById('categoryList'), category.id);
 
-      // 3️⃣ Ürünleri Supabase'ten çek
+      // 3️ Ürünleri Supabase'ten çek
       const { data: products, error } = await supabase
         .from("products")
         .select("id, slug, name, image_url")
@@ -175,20 +178,21 @@ async function showAllCategories() {
         return;
       }
 
-      // 4️⃣ Listeyi güncelle ve sayfayı 1’e al
+      // 4️ Listeyi güncelle ve sayfayı 1’e al
       allProducts = products;
       currentPage = 1;
       renderProductsPage();
 
-      // 5️⃣ URL’yi güncelle
+      // 5️ URL’yi güncelle
       history.pushState(null, '', `?category=${category.slug}`);
 
-      // 6️⃣ Scroll animasyonu
+      // 6️ Scroll animasyonu
       window.scrollTo({
         top: document.getElementById("projects").offsetTop - 100,
         behavior: 'smooth'
       });
     });
   });
+  await catController.loadAndRender();
 
 }
