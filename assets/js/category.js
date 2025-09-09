@@ -227,34 +227,7 @@ injectOnce('category-css', `
     0%, 100% { opacity:.35; }
     50% { opacity:.15; }
   }
-  .category-list { display:flex; flex-wrap:wrap; gap:.5rem; }
-  .category-chip {
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 0.375rem;
-  padding: 0.5rem 1rem;
-  background-color: white;
-  transition: background-color 0.2s ease;
-  text-align: left;
-  display: block;
-  color: #333;
-  font-size: 15px;
-  font-weight: 500;
-}
 
-.category-chip:hover {
-  background-color: #f8f9fa;
-  color: #000;
-  cursor: pointer;
-  transform: translateX(3px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.category-chip.active {
-  background: #ff6600;
-  color: #ff7b00ff;
-  font-weight: bold;
-}
 
 `)
 
