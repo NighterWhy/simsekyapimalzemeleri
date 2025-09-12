@@ -114,7 +114,7 @@ function renderVariants(rows) {
       .from('products_variants')
       .select('size, package_qty')
       .eq('product_id', product.id)
-      .order('size', { ascending: true });
+      
     if (varErr) console.warn('Varyant okunamadı:', varErr?.message);
 
     // DOM

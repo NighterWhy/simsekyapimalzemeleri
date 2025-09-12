@@ -44,14 +44,14 @@ export async function setupProductsPage() {
     const all = catController._categories;
     const found = all.find(c => c.slug === selectedSlug);
     if (found) await catController.select(found.id);
-    
+
   } else {
     await showAllCategories();
   }
 
   // Başlığa tıklanınca tüm kategorileri tekrar göster
   document.getElementById("kategoriBaslik").addEventListener("click", showAllCategories);
-  
+
 
 }
 
@@ -158,7 +158,7 @@ async function showAllCategories() {
   document.querySelectorAll('.category-card').forEach(card => {
     card.addEventListener('click', async () => {
       const catId = parseInt(card.dataset.categoryId);
-       if (!catController) return;
+      if (!catController) return;
       catController.select(catId);
       // 1️ Her zaman kategori verisini bul
       const category = catController._categories.find(c => c.id == catId);
@@ -194,5 +194,7 @@ async function showAllCategories() {
     });
   });
   await catController.loadAndRender();
+
+  
 
 }
