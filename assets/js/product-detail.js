@@ -4,11 +4,11 @@
 const qs = (s) => document.querySelector(s);
 const getParam = (k) => new URLSearchParams(location.search).get(k);
 
-const PRODUCT_ID   = getParam('id');
+const PRODUCT_ID = getParam('id');
 const PRODUCT_SLUG = getParam('slug'); // ister id ister slug
 
 /* ====== 1) Supabase Client ====== */
-const SUPABASE_URL  = "https://csvvtsheawphgghosryx.supabase.co";
+const SUPABASE_URL = "https://csvvtsheawphgghosryx.supabase.co";
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzdnZ0c2hlYXdwaGdnaG9zcnl4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5OTEzMTEsImV4cCI6MjA3MjU2NzMxMX0.ph12Klr8Ee4pM3l2fnz2ciAuvKv2gGMxAF9Twwm6l8Y";
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
@@ -54,6 +54,13 @@ function renderBasic({ name, image_url }, categoryName, categoryKey) {
   }
 
   document.title = `${name || 'Ürün Detayı'} | Şimşek Yapı`;
+  const whatsappBtn = document.querySelector('#whatsappBtn');
+  if (whatsappBtn) {
+    const phone = "+905413851170"; // senin WhatsApp numaran
+    const message = `Merhaba, ${name || 'ürün'} hakkında daha fazla bilgi almak istiyorum.`;
+    whatsappBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  }
+
 }
 
 function renderVariants(rows) {
@@ -87,7 +94,7 @@ function renderVariants(rows) {
       .select('id, slug, name, category_id, image_url')
       .limit(1);
 
-    if (hasSlug)       q = q.eq('slug', PRODUCT_SLUG);
+    if (hasSlug) q = q.eq('slug', PRODUCT_SLUG);
     else if (hasValidId) q = q.eq('id', idNum); // int8 → number
 
     const { data: pRows, error: pErr } = await q;
@@ -114,7 +121,7 @@ function renderVariants(rows) {
       .from('products_variants')
       .select('size, package_qty')
       .eq('product_id', product.id)
-      
+
     if (varErr) console.warn('Varyant okunamadı:', varErr?.message);
 
     // DOM
@@ -125,5 +132,5 @@ function renderVariants(rows) {
     els.title.textContent = 'Ürün Bulunamadı';
     els.variantTbody.innerHTML = `<tr><td colspan="2" class="text-danger">Tablo yüklenemedi.</td></tr>`;
   }
-  
+
 })();

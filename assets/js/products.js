@@ -1,7 +1,7 @@
 import { supabase, SUPABASE_URL, SUPABASE_KEY } from './supabase.js';
 import { initCategories } from './category.js';
 
-const PRODUCTS_PER_PAGE = 6;
+const PRODUCTS_PER_PAGE = 12;
 let currentPage = 1;
 let allProducts = [];
 let catController = null;
