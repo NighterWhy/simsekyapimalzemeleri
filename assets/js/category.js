@@ -53,7 +53,7 @@ const CategoryService = {
     const query = supabase
       .from('categories')
       .select('id, name, slug')
-      .order("id", { ascending: true })
+      .order('id', { ascending: true })
 
 
     const { data, error } = await query

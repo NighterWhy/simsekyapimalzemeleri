@@ -26,7 +26,8 @@ export async function setupProductsPage() {
       const { data: products, error } = await supabase
         .from("products")
         .select("id, slug, name, image_url")
-        .eq("category_id", cat.id);
+        .eq("category_id", cat.id)
+        .order("id", { ascending: true }); // ✅ burada da tamam
 
       if (error) {
         container.innerHTML = `<p class="text-danger">Ürünler yüklenemedi.</p>`;
@@ -176,7 +177,8 @@ async function showAllCategories() {
       const { data: products, error } = await supabase
         .from("products")
         .select("id, slug, name, image_url")
-        .eq("category_id", category.id);
+        .eq("category_id", category.id)
+        .order('id',{ascending : true});
 
       if (error) {
         console.error("Ürünler çekilemedi:", error);
