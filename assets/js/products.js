@@ -89,6 +89,11 @@ function renderProductsPage() {
   }
 
   renderPagination();
+  // ✅ Sayfa değişince ürünler bölümüne kaydır
+  const section = document.getElementById("projects");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function renderPagination() {
@@ -195,6 +200,6 @@ async function showAllCategories() {
   });
   await catController.loadAndRender();
 
-  
+
 
 }

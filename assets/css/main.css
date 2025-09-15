@@ -442,7 +442,7 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 24px;
     line-height: 0;
     margin-left: 5px;
     width: 30px;
@@ -508,6 +508,17 @@ h6 {
     margin-right: 0;
     z-index: 9999;
   }
+  .mobile-nav-toggle {
+  font-size: 40px;          /* ikonun gerçek boyutu */
+  width: 48px;              /* dokunma alanı genişliği */
+  height: 48px;             /* dokunma alanı yüksekliği */
+  display: flex;            /* ortalama için */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;          /* üzerine gelince el çıksın */
+  border-radius: 6px;       /* istersen dokunma alanını yuvarlat */
+}
+
 
   .mobile-nav-active .navmenu {
     position: fixed;
