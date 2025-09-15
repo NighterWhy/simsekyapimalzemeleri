@@ -198,7 +198,19 @@
                       </div>
                       <div class="form-field full-width">
                         <label for="attachment">Dosya Ekle</label>
-                        <input type="file" name="attachment" id="attachment" />
+
+                        <!-- Gizli file input -->
+                        <input type="file" name="attachment" id="attachment" style="display: none;" />
+
+                        <!-- Custom button -->
+                        <label for="attachment" class="submit-btn"
+                          style="cursor: pointer; background-color:#f1f1f1; color:#333; border:1px solid #ccc; display:inline-flex; align-items:center; gap:6px;">
+                          <i class="bi bi-paperclip"></i>
+                          Dosya Seç
+                        </label>
+
+                        <!-- Seçilen dosya adını göstermek için -->
+                        <span id="file-name" style="margin-left:10px; font-size:14px; color:#555;"></span>
                       </div>
 
 
@@ -337,6 +349,14 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  const fileInput = document.getElementById('attachment');
+  const fileName = document.getElementById('file-name');
+  
+  fileInput.addEventListener('change', function () {
+    fileName.textContent = this.files.length > 0 ? this.files[0].name : "";
+  });
+</script>
 
 </body>
 
