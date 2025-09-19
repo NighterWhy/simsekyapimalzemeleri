@@ -49,8 +49,8 @@ function renderBasic({ name, image_url }, categoryName, categoryKey) {
   if (els.categoryLink) {
     els.categoryLink.textContent = categoryName || 'Kategori';
     els.categoryLink.href = categoryKey
-      ? `products.html?category=${encodeURIComponent(categoryKey)}`
-      : 'products.html';
+      ? `urunler.html?category=${encodeURIComponent(categoryKey)}`
+      : 'urunler.html';
   }
 
   document.title = `${name || 'Ürün Detayı'} | Şimşek Yapı`;

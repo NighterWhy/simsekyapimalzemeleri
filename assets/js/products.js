@@ -77,7 +77,7 @@ function renderProductsPage() {
             <img src="${product.image_url}" alt="${product.name}" class="img-fluid">
             <div class="project-overlay">
               <div class="project-actions">
-                <a href="products-details.html?slug=${encodeURIComponent(product.slug)}" class="btn-project">Detay</a>
+                <a href="urun-detay.html?slug=${encodeURIComponent(product.slug)}" class="btn-project">Detay</a>
               </div>
             </div>
           </div>
