@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>${product.name} | Şimşek Yapı Malzemeleri</title>
+
+  <meta name="description" content="${product.name} hakkında detaylı bilgi alın. ${product.category} ürünleri ve fiyatları için hemen inceleyin. Şimşek Yapı güvencesiyle.">
+  <meta name="keywords" content="şimşek yapı ${product.name}, ${product.category}, pvc, pprc, koruge, yangın malzemeleri, yapı malzemeleri">
+  <meta name="author" content="Şimşek Yapı">
+  <meta name="robots" content="index, follow">
+
+  <!-- ✅ Canonical -->
+  <link rel="canonical" href="https://www.simsekyapi.com/urun-detay.html?slug=${product.slug}">
+
+  <!-- ✅ Open Graph -->
+  <meta property="og:title" content="${product.name} | Şimşek Yapı">
+  <meta property="og:description" content="${product.name} - ${product.category}. Güvenilir ve kaliteli inşaat malzemeleri.">
+  <meta property="og:image" content="${product.image_url}">
+  <meta property="og:url" content="https://www.simsekyapi.com/urun-detay.html?slug=${product.slug}">
+  <meta property="og:type" content="product">
+
+  <!-- ✅ Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${product.name} | Şimşek Yapı">
+  <meta name="twitter:description" content="${product.name} - ${product.category}. Güvenilir ve kaliteli inşaat malzemeleri.">
+  <meta name="twitter:image" content="${product.image_url}">
+
+  <!-- ✅ Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- ✅ Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- ✅ Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+
+<body class="project-details-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top" style="background-color: #000000;">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+
+        <img src="assets/img/logo.png" alt="Simsek-Yapi-Logo">
+        <h1 class="sitename">Şimşek Yapı</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="urunler.html" class="active">Ürünler</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+
+          <li><a href="markalarimiz.html">Markalarımız</a></li>
+          <li class="dropdown"><a href="#"><span>Daha Fazla</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul class="social-links mt-4">
+              <li><a href="magazalarimiz.html">Mağazalarımız</a></li>
+              <a href="https://www.facebook.com/simsekyapii/" target="_blank" aria-label="Facebook">Facebook<i
+                  class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/simsek.yapii/" target="_blank" aria-label="Instagram">Instagram<i
+                  class="bi bi-instagram"></i></a>
+              <a href="https://wa.me/905413851170?text=Merhaba%20bilgi%20almak%20istiyorum" target="_blank"
+                aria-label="WhatsApp">WhatsApp<i class="bi bi-whatsapp"></i>
+              </a>
+            </ul>
+          </li>
+
+
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted d-none d-sm-block" href="iletisim.html">İletişime Geç</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade"
+      style="background-image: url(assets/img/construction/showcase-2.webp);">
+      <div class="container position-relative">
+        <h1>Ürün Detayı</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Anasayfa </a></li>
+            <li class="current">Ürün Detayı</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Project Details Section -->
+    <section id="project-details" class="project-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Üst blok: Sol büyük görsel / Sağ başlık + kategori + açıklama -->
+        <div class="row gy-5 align-items-start">
+          <!-- Sol: Büyük görsel -->
+          <div class="col-lg-8">
+            <div class="project-hero" data-aos="zoom-out" data-aos-delay="200">
+              <img id="mainImage" src="assets/img/logo.png" alt="Ürün görseli" class="img-fluid">
+            </div>
+          </div>
+
+          <!-- Sağ: Başlık, kategori, açıklama, döküman butonları -->
+          <div class="col-lg-4">
+            <div class="project-info" data-aos="fade-left" data-aos-delay="300">
+              <h1 id="productTitle" class="project-title">PVC-U Boru / B Tipi</h1>
+
+              <div class="mt-2 text-muted">
+                kategori :
+                <a id="categoryLink" href="urunler.html?category=pvc-u" class="ms-1">PVC-U Sistemleri</a>
+              </div>
+
+              <h2 class="h5 mt-4 mb-2">Açıklama</h2>
+              <p id="productDescription" class="mb-0">
+                Basınçlı temiz su ve atık su hatlarında kullanılan PVC-U borular; yüksek darbe dayanımı,
+                pürüzsüz iç yüzey ve uzun ömürlü yapısıyla öne çıkar.
+              </p>
+
+              <!-- Opsiyonel: döküman butonları -->
+              <div id="docButtons" class="d-flex gap-2 mt-4">
+                <a id="whatsappBtn" target="_blank" class="btn btn-success">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp ile İletişime Geç
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alt blok: Ölçü & Ambalaj tablosu (stok kodu YOK) -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th style="width:50%">Ölçü / Çap / mm.</th>
+                    <th style="width:50%">Ambalaj Miktarı</th>
+                  </tr>
+                </thead>
+                <tbody id="variantTbody">
+                  <!-- JS dolduracak; istersen geçici iskelet: -->
+                  <tr>
+                    <td colspan="2" class="text-muted">Yükleniyor…</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <!-- Boş/hata durumu için istersen:
+      <div class="text-muted small mt-2">Varyant bulunamadı.</div>
+      -->
+          </div>
+        </div>
+
+      </div>
+
+
+    </section><!-- /Project Details Section -->
+
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/product-detail.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/include.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
